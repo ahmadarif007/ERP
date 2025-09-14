@@ -8,6 +8,7 @@ use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\Library\BuyerController;
 use App\Http\Controllers\Company\BusinessGroupController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Backend\CompanySetupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,3 +79,12 @@ Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('users.edi
 Route::post('/users/update/{id}', [UserController::class, 'update'])->name('users.update');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::get('/users-data', [UserController::class, 'getData'])->name('users.data');
+
+
+Route::prefix('company')->group(function(){
+    Route::get('item/list',[CompanySetupController::class,'itemList'])->name('item.list');
+    Route::post('item/store',[CompanySetupController::class,'itemStore'])->name('item.store');
+    Route::delete('item/delete/{id}',[CompanySetupController::class,'itemDelete'])->name('item.delete');
+
+    // size, color, fit, season এর জন্যও একইভাবে রুট বানাবেন
+});

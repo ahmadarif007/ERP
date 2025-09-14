@@ -58,6 +58,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ url('supplier') }}"><i class="fa fa-circle-o"></i>Supplier</a></li>
+            <li><a href="{{ Route('item.list') }}"><i class="fa fa-circle-o"></i>Item List</a></li>
             <li><a href="{{ url('/items') }}"><i class="fa fa-circle-o"></i>Item</a></li>
             {{-- <li><a href="{{ url('/add/form') }}"><i class="fa fa-circle-o"></i>Form</a></li>
             <li><a href="{{ url('/form') }}"><i class="fa fa-circle-o"></i>Form2</a></li>
