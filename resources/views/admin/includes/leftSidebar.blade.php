@@ -41,9 +41,10 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                    <li><a href="{{ url('order/entry/') }}"><i class="fa fa-circle-o"></i>Order Entry by Matrix</a></li>
-                    <li><a href="{{ url('pre-costing/') }}"><i class="fa fa-circle-o"></i>Pre-Costing</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>Sample Requisition With Booking</a></li>
+                  <li><a href="{{ url('mminitial') }}"><i class="fa fa-circle-o"></i>MM</a></li>
+                  <li><a href="{{ url('order/entry/') }}"><i class="fa fa-circle-o"></i>Order Entry by Matrix</a></li>
+                  <li><a href="{{ url('pre-costing/') }}"><i class="fa fa-circle-o"></i>Pre-Costing</a></li>
+                  <li><a href="#"><i class="fa fa-circle-o"></i>Sample Requisition With Booking</a></li>
               </ul>
             </li>
           </ul>
@@ -57,8 +58,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="{{ url('mminitial') }}"><i class="fa fa-circle-o"></i>MM</a></li>
             <li><a href="{{ url('supplier') }}"><i class="fa fa-circle-o"></i>Supplier</a></li>
-            <li><a href="{{ Route('item.list') }}"><i class="fa fa-circle-o"></i>Item List</a></li>
+            {{-- <li><a href="{{ Route('item.list') }}"><i class="fa fa-circle-o"></i>Item List</a></li> --}}
             <li><a href="{{ url('/items') }}"><i class="fa fa-circle-o"></i>Item</a></li>
             {{-- <li><a href="{{ url('/add/form') }}"><i class="fa fa-circle-o"></i>Form</a></li>
             <li><a href="{{ url('/form') }}"><i class="fa fa-circle-o"></i>Form2</a></li>
@@ -69,6 +71,7 @@
             <li><a href="{{ url('brand') }}"><i class="fa fa-circle-o"></i>Brand</a></li>
             <li><a href="{{ url('party-type') }}"><i class="fa fa-circle-o"></i>Part Type</a></li>
             <li><a href="{{ url('company') }}"><i class="fa fa-circle-o"></i>Company</a></li>
+            <li><a href="{{ Route('mm.initialSetup') }}"><i class="fa fa-circle-o"></i>MM Initial Setup</a></li>
           </ul>
         </li>
 

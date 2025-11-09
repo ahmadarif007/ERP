@@ -1,0 +1,1 @@
+<h1>This is fabric bookin page</h1>

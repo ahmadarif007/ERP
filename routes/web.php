@@ -9,6 +9,17 @@ use App\Http\Controllers\Library\BuyerController;
 use App\Http\Controllers\Company\BusinessGroupController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\CompanySetupController;
+use App\Http\Controllers\Backend\ItemController;
+use App\Http\Controllers\Backend\MMController;
+
+use App\Http\Controllers\Backend\MM\MMInitialController;
+use App\Http\Controllers\Backend\MM\JobController;
+use App\Http\Controllers\Backend\MM\PODetailsController;
+use App\Http\Controllers\Backend\MM\FabricBudgetController;
+use App\Http\Controllers\Backend\MM\TrimsBudgetController;
+use App\Http\Controllers\Backend\MM\EmbelishmentController;
+use App\Http\Controllers\Backend\MM\FabricBookingController;
+use App\Http\Controllers\Backend\MM\LabDipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,9 +93,52 @@ Route::get('/users-data', [UserController::class, 'getData'])->name('users.data'
 
 
 Route::prefix('company')->group(function(){
-    Route::get('item/list',[CompanySetupController::class,'itemList'])->name('item.list');
-    Route::post('item/store',[CompanySetupController::class,'itemStore'])->name('item.store');
-    Route::delete('item/delete/{id}',[CompanySetupController::class,'itemDelete'])->name('item.delete');
+    Route::get('/', [CompanySetupController::class, 'index'])->name('mm.index');
+    Route::get('/items/table', [ItemController::class, 'index'])->name('mm.index');
+
+    Route::get('/item/tab-content/gmts-item', [ItemController::class, 'gmtsTab']);
+
+
+    // Route::get('item/list',[CompanySetupController::class,'itemList'])->name('item.list');
+    // Route::post('item/store',[CompanySetupController::class,'itemStore'])->name('item.store');
+    // Route::delete('item/delete/{id}',[CompanySetupController::class,'itemDelete'])->name('item.delete');
+
+    // MM Item CRUD
+    Route::post('items/store', [ItemController::class, 'storeItem'])->name('items.store');
+    Route::get('items/edit/{id}', [ItemController::class, 'editItem']);
+    Route::post('items/update/{id}', [ItemController::class, 'updateItem']);
+    Route::delete('items/delete/{id}', [ItemController::class, 'deleteItem']);
 
     // size, color, fit, season এর জন্যও একইভাবে রুট বানাবেন
 });
+
+Route::get('/mm-initial-setup', [MMController::class, 'mmInitialSetup'])->name('mm.initialSetup');
+
+
+// routes/web.php
+Route::get('/mminitial', [MMInitialController::class, 'mminitial']);
+Route::get('/job-entry', [JobController::class, 'jobentry']);
+Route::get('/po-details', [PODetailsController::class, 'podetails']);
+Route::get('/labdip', [LabDipController::class, 'labdip']);
+Route::get('/fabric-budget', [FabricBudgetController::class, 'fabricbudget']);
+Route::get('/trims-budget', [TrimsBudgetController::class, 'trimsbudget']);
+Route::get('/embelishment-budget', [EmbelishmentController::class, 'embbudget']);
+Route::get('/fabric-booking', [FabricBookingController::class, 'fabricbooking']);
+
+
+
+// Route::get('/home', function() {
+//     return view('admin.partials.home'); // শুধুমাত্র content অংশ
+// });
+// Route::get('/projects', function() {
+//     return view('admin.partials.projects');
+// });
+// Route::get('/breadcrumb', function() {
+//     return view('admin.partials.breadcrumb');
+// });
+// Route::get('/getting-started', function() {
+//     return view('admin.partials.start');
+// });
+// Route::get('/download', function() {
+//     return view('admin.partials.download');
+// });

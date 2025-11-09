@@ -52,6 +52,8 @@
 
 <!-- DataTables -->
 <script src="{{ asset('erp_dashboard/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/additional-methods.min.js"></script>
 
 
 {{-- <!-- jQuery 3 -->
