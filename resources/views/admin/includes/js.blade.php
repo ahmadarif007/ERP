@@ -115,3 +115,8 @@
     })
   })
 </script>
+
+{{-- breakdown --}}
+<script src="{{asset('backend')}}/custom-js/mm/breakdown.js"></script>
+{{-- <script src="{{asset('backend')}}/custom-js/mm/fabric-budget.js"></script>
+<script src="{{asset('backend')}}/custom-js/mm/trims-budget.js"></script> --}}

@@ -1,0 +1,125 @@
+.trims-container body { font-family: Arial, sans-serif; margin: 20px; font-size: 12px;}
+    .trims-container h1 { text-align: center; }
+    .trims-container table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    .trims-container th, td {
+        border: 1px solid #ccc;
+        padding: 5px;
+        text-align: center;
+    }
+    /* th { background: #f0f0f0; } */
+    .trims-container th { background: #2c3e50; color: white;}
+    .trims-container input {
+        width: 100%;
+        padding: 4px;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid grey;
+    }
+    .trims-container select {
+        width: 100%;
+        padding: 4px;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #3498db;
+    }
+    .cons-unit {
+        background: #e6f7ff;
+        font-weight: bold;
+        cursor: pointer;
+        color: #0066cc;
+    }
+    .cons-unit:hover { background: #d0ebff; }
+    .action-btn {
+        padding: 6px 10px;
+        cursor: pointer;
+        background: #ff4444;
+        color: white;
+        border: none;
+        border-radius: 4px;
+    }
+    .add-row-btn {
+        margin: 10px 0;
+        padding: 7px 20px;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+
+    /* Modal Styles */
+    .trims-modal-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: none; justify-content: center; align-items: center;
+        z-index: 1000;
+    }
+    .trims-modal {
+        background: white;
+        width: 95%; max-width: 1400px;
+        max-height: 90vh; overflow: auto;
+        border-radius: 3px; 
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        position: relative;
+    }
+    .trims-modal-header {
+        padding: 2px 10px; background-color: #2c3e50; color: white;
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    .trims-modal-controls {
+        padding: 10px 10px; background: #f9f9f9;
+        display: flex; justify-content: space-between; align-items: center;
+        flex-wrap: wrap; gap: 0px; margin-top: 5px;
+    }
+    .copy-options { display: flex; }
+    .copy-options label { text-align: center; font-size: 11px; color: #3498db;}
+    .filters { display: flex; gap: 10px; }
+    .filters select { padding: 4px; width: 130px; border-radius: 5px;}
+    .apply-btn { background: #007bff; color: white; padding: 4px 16px; border: none; border-radius: 4px; cursor: pointer; font-size: 10px;}
+    .reset-btn { background: #ff9800; color: white; padding: 4px 16px; border: none; border-radius: 4px; cursor: pointer; font-size: 10px;}
+    .close-btn { background: #f44336; color: white; padding: 3px 15px; border: none; border-radius: 4px; cursor: pointer; }
+    .save-btn { background: #28a745; color: white; padding: 5px 25px; border: none; border-radius: 4px; cursor: pointer; 
+        align-items: center;
+    }
+    .trims-modal-content { padding: 20px; padding-top: 0px;}
+    .merged { background: #f9f9f9; font-weight: bold; }
+    .sum-row { background: #e6f3ff; font-weight: bold; }
+    .avg-row { background: #fff3e6; font-weight: bold; }
+
+    .box1 {
+        position: relative;
+        padding-top: 15px; /* label-এর জন্য জায়গা */
+        border: 1px solid #3498db; 
+        border-radius: 3px; 
+        padding: 10px;
+        background: white;
+    }
+
+    .box1::before {
+        content: attr(data-label);
+        position: absolute;
+        top: -8px;
+        left: 15px;
+        background: white;   /* বর্ডারের উপর টেক্সট স্পষ্ট করার জন্য */
+        padding: 0 5px;
+        font-weight: bold;
+        /* color: white;
+        border-radius: 3px; */
+    }
+
+    .main-header {
+        position: static ;
+        max-height: none;
+        z-index: auto;
+    }
+    .headTable th {
+        font-size: 11px;
+    }
+    .consTable th {
+        font-size: 11px;
+    }

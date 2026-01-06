@@ -1,7 +1,9 @@
+
+
 <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
-      <div class="row">
+      {{-- <div class="row">
         <div class="col-sm-2 col-xs-1">
           <!-- small box -->
           <div class="small-box bg-aqua">
@@ -122,12 +124,61 @@
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-      </div>
+      </div> --}}
       <!-- /.row -->
 
 
       <div class="row">
         {{-- Data table with search======================= --}}
+        <div class="box col-lg-12">
+          <div class="box-header">
+            <h3 class="box-title">Total Job Details Information</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body po-container">
+              <div style="background: #FF4D00">
+                <span style="font-size: 15px; font-weight: bold">0</span><br>
+                <span style="font-size: 12px">Job Quantity</span>
+              </div>
+              <div style="background: #FF8904">
+                <span style="font-size: 15px; font-weight: bold">0</span><br>
+                <span style="font-size: 12px">Total Amount</span>
+              </div>
+              <div style="background: #0B9891">
+                <span style="font-size: 15px; font-weight: bold">0</span><br>
+                <span style="font-size: 12px">Avrg. Price</span>
+              </div>
+              <div style="background: #5C7AA3">
+                <span style="font-size: 15px; font-weight: bold">0</span><br>
+                <span style="font-size: 12px">Actual Qty</span>
+              </div>
+              <div style="background: #E1712B">
+                <span style="font-size: 15px; font-weight: bold">0</span><br>
+                <span style="font-size: 12px">Proj. Qty</span>
+              </div>
+              <div style="background: #05DF72">
+                <span style="font-size: 15px; font-weight: bold">0</span><br>
+                <span style="font-size: 12px">Proj. Rate</span>
+              </div>
+              <div style="background: #C01128">
+                <span style="font-size: 15px; font-weight: bold">0</span><br>
+                <span style="font-size: 12px">Proj. Amount</span>
+              </div>
+              <div style="background: #047154">
+                <span style="font-size: 15px; font-weight: bold">0</span><br>
+                <span style="font-size: 12px">Actual Rate</span>
+              </div>
+              <div style="background: #9B00A3">
+                <span style="font-size: 15px; font-weight: bold">0</span><br>
+                <span style="font-size: 12px">Actual Amount</span>
+              </div>
+            </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+
+      {{-- <div class="row">
+        {{-- Data table with search======================= --
         <div class="box col-lg-12">
           <div class="box-header">
             <h3 class="box-title">Total Job Details Information</h3>
@@ -164,7 +215,7 @@
           </div>
           <!-- /.box-body -->
         </div>
-      </div>
+      </div> --}}
 
         <!-- SELECT2 EXAMPLE -->
         <div class="box box-default col-12">
@@ -252,12 +303,86 @@
         </div>
         <!-- /.box -->
 
-        <div class="row">
+        
+
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">Data Table With Full Features</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="po-header">প্ল্যানকাট ম্যাট্রিক্স সিস্টেম</div>
+          <!-- উপরে PO লিস্ট -->
+          <div class="po-list" id="po-list">
+            <div class="po-btn active" data-po="PO-2025-101">PO-2025-101</div>
+            <div class="po-btn" data-po="PO-2025-102">PO-2025-102</div>
+            <div class="po-btn" data-po="PO-2025-103">PO-2025-103</div>
+            <div class="po-btn" data-po="PO-2025-104">PO-2025-104</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-105</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-106</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-107</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-108</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-109</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1010</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1011</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+            <div class="po-btn" data-po="PO-2025-105">PO-2025-1012</div>
+          </div>
+          <div class="main-area">
+            <!-- বাম পাশে: সিলেক্টেড PO + কালার + সাইজ -->
+            <div class="left-panel">
+              <div class="current-po" id="selected-po">PO-2025-101</div>
+
+              <div class="input-section">
+                <h3>কালার যোগ করুন</h3>
+                <input type="text" id="color-input" placeholder="কালার লিখে এন্টার দিন" onkeypress="if(event.key==='Enter') addColor()">
+                <div id="color-tags" class="tag-list"></div>
+              </div>
+
+              <div class="input-section">
+                <h3>সাইজ যোগ করুন</h3>
+                <input type="text" id="size-input" placeholder="সাইজ লিখে এন্টার দিন" onkeypress="if(event.key==='Enter') addSize()">
+                <div id="size-tags" class="tag-list"></div>
+              </div>
+
+              <!-- <button class="btn-generate" onclick="generateMatrix()">ম্যাট্রিক্স তৈরি করুন</button> -->
+              <button class="btn-generate" onclick="generateMatrix()">Quantity Breakdown</button>
+            </div>
+
+            <!-- ডান পাশে: ম্যাট্রিক্স -->
+            <div class="right-panel" id="matrix-area" style="display:none;">
+              <h2 class="plancut-head">Plancut Quantity Breakdown</h2>
+              <div class="table-container" id="matrix-container">
+                <div id="table"></div>
+              </div>
+              <div id="summary" class="summary"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
           {{-- Data tablewithout search=============== --}}
           <div class="col-xs-12">
             <div class="box box-info">
               <div class="box-header">
-                <h3 class="box-title">PO List With This Job</h3>
+                <h3 class="box-title">PO Summery On This Job</h3>
                 <div class="box-tools">
                   <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
@@ -328,89 +453,9 @@
             <!-- /.box -->
           </div>
         </div>
-
-      <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">Data Table With Full Features</h3>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-          <table id="example1" class="table table-bordered table-striped">
-            <thead>
-            <tr>
-              <th>Rendering engine</th>
-              <th>Browser</th>
-              <th>Platform(s)</th>
-              <th>Engine version</th>
-              <th>CSS grade</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>Trident</td>
-              <td>Internet
-                Explorer 4.0
-              </td>
-              <td>Win 95+</td>
-              <td> 4</td>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>Trident</td>
-              <td>Internet
-                Explorer 5.0
-              </td>
-              <td>Win 95+</td>
-              <td>5</td>
-              <td>C</td>
-            </tr>
-            <tr>
-              <td>Trident</td>
-              <td>Internet
-                Explorer 5.5
-              </td>
-              <td>Win 95+</td>
-              <td>5.5</td>
-              <td>A</td>
-            </tr>
-            <tr>
-              <td>Trident</td>
-              <td>Internet
-                Explorer 6
-              </td>
-              <td>Win 98+</td>
-              <td>6</td>
-              <td>A</td>
-            </tr>
-            </tfoot>
-          </table>
-        </div>
-        <!-- /.box-body -->
-        <div class="container">
-    <h5 class="mb-3">Color & Size Entry</h5>
-
-    <form id="colorSizeForm">
-        <div id="colorContainer">
-            <div class="color-block mb-3 border p-3 rounded">
-                <div class="d-flex justify-content-between mb-2">
-                    <input type="text" name="colors[]" class="form-control w-50" placeholder="Enter Color Name">
-                    <button type="button" class="btn btn-danger btn-sm removeColor">Remove</button>
-                </div>
-                <div class="size-list">
-                    <button type="button" class="btn btn-outline-secondary btn-sm addSize">+ Add Size</button>
-                    <div class="sizeInputs mt-2"></div>
-                </div>
-            </div>
-        </div>
-        <button type="button" class="btn btn-outline-primary" id="addColor">+ Add Color</button>
-        <button type="button" class="btn btn-success ms-2" id="generateMatrix">Quantity Breakdown</button>
-    </form>
-
-    <div id="matrixSection" class="mt-4"></div>
-</div>
-      </div>
     </section>
     <!-- /.content -->
+
 
 
 

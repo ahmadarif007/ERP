@@ -1,0 +1,54 @@
+.container { max-width: 1800px; margin: auto; background: white; border-radius: 0px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); overflow: hidden; }
+/* h1, h2 { text-align: center; background: #2c3e50; color: white; padding: 18px; margin: 0; } */
+.section { padding: 10px; border-bottom: 4px solid #3498db; }
+.add-btn { background: #27ae60; color: white; padding: 14px 30px; border: none; border-radius: 10px; cursor: pointer; font-size: 18px; font-weight: bold; margin-bottom: 20px; }
+.fabric-container table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+.fabric-container th, td { border: 1px solid #95a5a6; padding: 5px; text-align: center; }
+.fabric-container th { background: #34495e; color: white; position: sticky; top: 0; z-index: 10; }
+.fabric-container input, select { width: 100%; padding: 4px; border: 1px solid #ddd; border-radius: 3px; box-sizing: border-box; font-size: 10px}
+.delete { background: #e74c3c; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; }
+.avg-cons { background: #3498db; color: white; font-weight: bold; cursor: pointer; padding: 5px; border-radius: 5px; }
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; justify-content: center; align-items: center; }
+.modal-content { background: white; width: 96%; max-width: 1800px; max-height: 94vh; overflow: auto; border-radius: 0px; position: relative; }
+.close { position: absolute; top: 10px; right: 25px; font-size: 20px; cursor: pointer; z-index: 11; color: white}
+/* .tools { padding: 20px; background: #ecf0f1; border-bottom: 4px solid #3498db; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; } */
+.tools { padding: 10px; border-bottom: 4px solid #3498db; display: flex; gap: 10px; justify-content: center; margin-top: 5px}
+
+/* .copy-group { display: flex; flex-wrap: wrap; gap: 10px; background: white; padding: 10px; border-radius: 8px; border: 2px solid #3498db; align-items: center; } */
+.copy-group { display: flex; flex-wrap: wrap; gap: 5px; background: white; padding: 5px 5px 5px 5px; border-radius: 5px; border: 1px solid #3498db; align-items: center; }
+.copy-group label { padding: 2px 7px; border-radius: 5px; border: 1px solid #3498db; cursor: pointer; text-align: center;}
+.copy-group input[type="checkbox"] { margin-right: 6px; }
+.search-box input { padding: 12px; width: 200px; border-radius: 8px; border: 2px solid #3498db; }
+.total-row { background: #2c3e50 !important; color: white; font-weight: bold; font-size: 16px; }
+.avg-row { background: #2980b9 !important; color: white; font-weight: bold; }
+/* .btn-group { text-align: center; margin: 30px 0; } */
+.btn { padding: 5px 15px; margin: 0 5px; border: none; border-radius: 3px; font-size: 10px; cursor: pointer; color: white; }
+.btn-save { background: #27ae60; }
+.btn-update { background: #2980b9; }
+.btn-delete { background: #c0392b; }
+.btn-refresh { background: #f39c12; }
+
+.box1 {
+    position: relative;
+    padding-top: 15px; /* label-এর জন্য জায়গা */
+}
+
+.box1::before {
+    content: attr(data-label);
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    background: white;   /* বর্ডারের উপর টেক্সট স্পষ্ট করার জন্য */
+    padding: 0 5px;
+    font-weight: bold;
+    /* color: white;
+    border-radius: 3px; */
+}
+/* .fb-budget-tabel th{
+  font-size: 10px;
+  width: 100px;
+}
+.fb-budget-tabel td, input, select{
+  font-size: 10px;
+  width: 100px;
+} */

@@ -1,176 +1,3 @@
-<div class="fabric-container">
-    <!-- Fabric Section -->
-    <div class="section">
-        <h2>১. ফেব্রিক বাজেটিং</h2>
-        <button class="btn btn-sm btn-success" onclick="addFabricRow()">+ নতুন বডি পার্ট যোগ করুন</button>
-
-        <table id="fabricTable">
-            <thead>
-                <tr>
-                    <th style="width: 100px">Gmts Item</th>
-                    <th style="width: 100px">Body Part</th>
-                    <th style="width: 100px">Body Part Type</th>
-                    <th style="width: 100px">Fab Nature</th>
-                    <th style="width: 100px">Color Type</th>
-                    <th style="width: 200px">Fabric Desc (Yarns)</th>
-                    <th style="width: 100px">Source</th>
-                    <th style="width: 100px">Width</th>
-                    <th style="width: 100px">GSM</th>
-                    <th style="width: 100px">Sensitive</th>
-                    <th style="width: 100px">Cons. Basis</th>
-                    <th style="width: 50px">UOM</th>
-                    <th style="width: 70px">Avg Grey Cons</th>
-                    <th style="width: 50px">Rate</th>
-                    <th style="width: 100px">Amount</th>
-                    <th style="width: 100px">Gmts Qty</th>
-                    <th style="width: 100px">Total R.Qty</th>
-                    <th style="width: 100px">Total R.Amt</th>
-                    <th style="width: 50px">Action</th>
-                </tr>
-            </thead>
-            <tbody id="fabricBody"></tbody>
-            <tfoot>
-                <tr class="total-row">
-                    <td colspan="16">গ্র্যান্ড টোটাল</td>
-                    <td id="grandQty">0</td>
-                    <td id="grandKg">0.000</td>
-                    <td id="grandAmt">0.00</td>
-                </tr>
-            </tfoot>
-        </table>
-
-        <div class="btn-group">
-            <button class="btn btn-save" onclick="saveAllFabric()">সেভ ফেব্রিক</button>
-            <button class="btn btn-delete" onclick="if(confirm('সব ডিলিট?')) clearAllFabric()">ডিলিট অল</button>
-            <button class="btn btn-refresh" onclick="location.reload()">রিফ্রেশ</button>
-        </div>
-    </div>
-
-    <!-- Yarn Section -->
-    <div class="section">
-        <h2>২. ইয়ার্ন কষ্টিং (অটো জেনারেটেড)</h2>
-        <table id="yarnTable">
-            <thead>
-                <tr>
-                    <th>SL</th>
-                    <th>Fabric Seq</th>
-                    <th>Yarn Count</th>
-                    <th>Cons %</th>
-                    <th>Cons Qty (Kg)</th>
-                    <th>Yarn Color</th>
-                    <th>Yarn Type</th>
-                    <th>Finish</th>
-                    <th>Spinning</th>
-                    <th>Cert</th>
-                    <th>Supplier</th>
-                    <th>Rate/Kg</th>
-                    <th>Amount</th>
-                </tr>
-            </thead>
-            <tbody id="yarnBody"></tbody>
-            <tfoot>
-                <tr class="total-row">
-                    <td colspan="4">গ্র্যান্ড টোটাল</td>
-                    <td id="totalYarnKg">0.000</td>
-                    <td colspan="7"></td>
-                    <td id="totalYarnAmt">0.00</td>
-                </tr>
-            </tfoot>
-        </table>
-
-        <div class="btn-group">
-            <button class="btn btn-save" onclick="saveYarn()">সেভ ইয়ার্ন</button>
-            <button class="btn btn-update" onclick="alert('আপডেট হচ্ছে...')">আপডেট ইয়ার্ন</button>
-            <button class="btn btn-delete" onclick="if(confirm('সব ইয়ার্ন ডিলিট?')) clearYarn()">ডিলিট অল</button>
-            <button class="btn btn-refresh" onclick="generateYarn()">রিফ্রেশ</button>
-        </div>
-    </div>
-</div>
-
-<!-- Modal -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">X</span>
-        <h4 style="background:#2c3e50; color:white; padding:10px; margin:0; text-align:center;">
-            কনজাম্পশন ডিটেইলস - <span id="modalTitle">Body Part</span>
-        </h4>
-
-        <!-- <div class="tools">
-            <div class="copy-group">
-                <strong>কপি করুন:</strong>
-                <label><input type="checkbox" id="copyAll"> সব</label>
-                <label><input type="checkbox" id="copyPO"> PO</label>
-                <label><input type="checkbox" id="copyColor"> কালার</label>
-                <label><input type="checkbox" id="copySize"> সাইজ</label>
-                <label><input type="checkbox" id="copyPOColor"> PO+কালার</label>
-                <label><input type="checkbox" id="copyPOSize"> PO+সাইজ</label>
-                <label><input type="checkbox" id="copyColorSize"> কালার+সাইজ</label>
-                <button class="btn btn-save" onclick="applyCopy()">অ্যাপ্লাই</button>
-                <button class="btn btn-delete" onclick="resetModal()">রিসেট</button>
-            </div>
-            <div class="search-box">
-                <input type="text" placeholder="PO সার্চ" onkeyup="filterModal()">
-                <input type="text" placeholder="কালার সার্চ" onkeyup="filterModal()">
-                <input type="text" placeholder="সাইজ সার্চ" onkeyup="filterModal()">
-            </div>
-        </div> -->
-
-        <div class="tools">
-            <!-- নতুন সুন্দর ফিল্টার বক্স -->
-            <div class="box1" data-label="Search From Here" style="background:white; padding:13px 10px; border-radius:5px; border:1px solid #3498db; box-shadow:0 4px 15px rgba(52,152,219,0.2);">
-                <!-- <strong style="color:#2c3e50; margin-right:15px;">ফিল্টার করুন:</strong> -->
-                <input type="text" id="filterPO" placeholder="PO নম্বর" onkeyup="applyFilters()" style="width:150px; padding:5px; margin:5px; border-radius:5px; border:1px solid #3498db;">
-                <input type="text" id="filterColor" placeholder="কালার" onkeyup="applyFilters()" style="width:120px; padding:5px; margin:5px; border-radius:5px; border:1px solid #3498db;">
-                <input type="text" id="filterSize" placeholder="সাইজ" onkeyup="applyFilters()" style="width:100px; padding:5px; margin:5px; border-radius:5px; border:1px solid #3498db;">
-                <button onclick="clearFilters()" style="padding:5px 10px; background:#e74c3c; color:white; border:none; border-radius:5px; cursor:pointer;">ক্লিয়ার</button>
-            </div>
-            <div class="copy-group box1" data-label="Apply Copy Rulse From Here">
-                <!-- <strong>কপি করুন:</strong> -->
-                <label><input type="checkbox" id="copyAll">সব</label>
-                <label><input type="checkbox" id="copyPO">PO</label>
-                <label><input type="checkbox" id="copyColor">কালার</label>
-                <label><input type="checkbox" id="copySize">সাইজ</label>
-                <label><input type="checkbox" id="copyPOColor">PO+কালার</label>
-                <label><input type="checkbox" id="copyPOSize">PO+সাইজ</label>
-                <label><input type="checkbox" id="copyColorSize">কালার+সাইজ</label>
-                <button class="btn btn-save" onclick="applyCopy()">অ্যাপ্লাই</button>
-                <button class="btn btn-delete" onclick="resetModal()">রিসেট</button>
-            </div>
-        </div>
-
-        <table id="consTable">
-            <thead>
-                <tr>
-                    <th>SL</th>
-                    <th>PO NO</th>
-                    <th>Color</th>
-                    <th>Size</th>
-                    <th>Dia</th>
-                    <th>Cut Dia</th>
-                    <th>Finish Cons</th>
-                    <th>Loss %</th>
-                    <th>Grey Cons</th>
-                    <th>Rate</th>
-                    <th>Amount</th>
-                    <th>Pcs</th>
-                    <th>Total Qty</th>
-                    <th>Total Amt</th>
-                </tr>
-            </thead>
-            <tbody id="consBody"></tbody>
-            <tfoot>
-                <tr class="total-row"><td colspan="6">মোট</td><td id="tFin">0</td><td>-</td><td id="tGrey">0</td><td>-</td><td id="tAmt">0</td><td id="tPcs">0</td><td id="tQty">0</td><td id="tTAmt">0</td></tr>
-                <tr class="avg-row"><td colspan="6">গড়</td><td id="aFin">-</td><td id="aLoss">-</td><td id="aGrey">-</td><td>-</td><td id="aAmt">-</td><td>-</td><td>-</td><td>-</td></tr>
-            </tfoot>
-        </table>
-
-        <div style="text-align:center; padding:30px;">
-            <button class="btn btn-save" style="padding:10px 20px; font-size:15px;" onclick="saveModal()">সেভ করুন</button>
-        </div>
-    </div>
-</div>
-
-<script>
 // PO Data
 const poData = [
     {po:"PO-001", colors:{
@@ -195,60 +22,25 @@ function addFabricRow() {
     fabricRows.push({data: [], yarns: "DTF Organic Cotton, Elastine"});
     const tr = document.createElement("tr");
     tr.innerHTML = `
-        <td style="width: 100px"><input value="T-Shirt"></td>
-        <td style="width: 100px"><input value="Body ${idx+1}" class="bp"></td>
-        <td style="width: 100px">
-          <select onmouseover="this.title = this.options[this.selectedIndex].text">
-            <option>Main</option>
-            <option>Collar</option>
-          </select>
-        </td>
-        <td style="width: 100px">
-          <select onmouseover="this.title = this.options[this.selectedIndex].text">
-            <option>Cotton</option>
-          </select>
-        </td>
-        <td style="width: 100px">
-          <select onmouseover="this.title = this.options[this.selectedIndex].text">
-            <option>Solid</option>
-            <option>Yarn Dyed</option>
-          </select>
-        </td>
-        <td style="width: 200px"><input value="Terry | Organic Cotton 95%, Elastine 5%" class="fab-desc" oninput="fabricRows[${idx}].yarns = this.value; generateYarn()" onmouseover="this.title = this.value"></td>
-        <td style="width: 100px">
-          <select onmouseover="this.title = this.options[this.selectedIndex].text">
-            <option>Knitting</option>
-            <option>Buying</option>
-          </select>
-        </td>
-        <td style="width: 100px"><input value="58/60"></td>
-        <td style="width: 100px"><input value="180"></td>
-        <td style="width: 100px">
-          <select onmouseover="this.title = this.options[this.selectedIndex].text">
-            <option>No</option>
-            <option>Yes</option>
-          </select>
-        </td>
-        <td style="width: 100px">
-          <select onmouseover="this.title = this.options[this.selectedIndex].text">
-            <option>Production</option>
-            <option>Purchase</option>
-          </select>
-        </td>
-        <td style="width: 50px">
-          <select onmouseover="this.title = this.options[this.selectedIndex].text">
-            <option>Kg</option>
-            <option>Gm</option>
-            <option>Yds</option>
-          </select>
-        </td>
-        <td style="width: 70px" class="avg-cons" onclick="openModal(${idx})">0.000</td>
-        <td style="width: 50px"><input type="text" step="0.01" class="rate" oninput="calcMain()"></td>
-        <td style="width: 100px" class="amt">0.00</td>
-        <td style="width: 100px" class="gmtsqty">0</td>
-        <td style="width: 100px" class="totkg">0.000</td>
-        <td style="width: 100px" class="totamt">0.00</td>
-        <td style="width: 50px"><button class="delete" onclick="deleteFabricRow(${idx})">×</button></td>
+        <td><button class="delete" onclick="deleteFabricRow(${idx})">×</button></td>
+        <td><input value="T-Shirt"></td>
+        <td><input value="Body ${idx+1}" class="bp"></td>
+        <td><select><option>Main</option><option>Collar</option></select></td>
+        <td><select><option>Cotton</option></select></td>
+        <td><select><option>Solid</option><option>Yarn Dyed</option></select></td>
+        <td><input value="DTF Organic Cotton, Elastine" class="fab-desc" oninput="fabricRows[${idx}].yarns = this.value; generateYarn()"></td>
+        <td><select><option>Knitting</option><option>Buying</option></select></td>
+        <td><input value="58/60"></td>
+        <td><input value="180"></td>
+        <td><select><option>No</option><option>Yes</option></select></td>
+        <td><select><option>Production</option><option>Purchase</option></select></td>
+        <td><select><option>Kg</option></select></td>
+        <td class="avg-cons" onclick="openModal(${idx})">0.000</td>
+        <td><input type="number" step="0.01" class="rate" oninput="calcMain()"></td>
+        <td class="amt">0.00</td>
+        <td class="gmtsqty">0</td>
+        <td class="totkg">0.000</td>
+        <td class="totamt">0.00</td>
     `;
     document.getElementById("fabricBody").appendChild(tr);
 }
@@ -283,17 +75,17 @@ function openModal(i) {
                 tr.dataset.po = po.po; tr.dataset.color = color; tr.dataset.size = size;
                 tr.innerHTML = `
                     <td>${sl++}</td>
-                    <td class="po-cell" style="Width: 150px">${po.po}</td>
-                    <td class="color-cell" style="Width: 150px">${color}</td>
-                    <td style="Width: 40px; font-weight: bold;">${size}</td>
-                    <td><input type="text" step="0.01" class="dia" value="${saved.dia||'0 CM'}"></td>
-                    <td><input type="text" step="0.01" class="cdia" value="${saved.cdia||'N/A'}"></td>
-                    <td style="Width: 100px"><input type="text" step="0.001" class="fin" value="${saved.fin||''}" oninput="calcRow(this)"></td>
-                    <td style="Width: 100px"><input type="text" step="0.01" class="loss" value="${saved.loss||'10'}" oninput="calcRow(this)"></td>
-                    <td class="grey" style="Width: 100px">0.000</td>
-                    <td style="Width: 100px"><input type="text" step="0.01" class="rate" value="${saved.rate||''}" oninput="calcRow(this)"></td>
+                    <td class="po-cell">${po.po}</td>
+                    <td class="color-cell">${color}</td>
+                    <td>${size}</td>
+                    <td><input type="number" step="0.01" value="58"></td>
+                    <td><input type="number" step="0.01" value="58"></td>
+                    <td><input type="number" step="0.001" class="fin" value="${saved.fin||''}" oninput="calcRow(this)"></td>
+                    <td><input type="number" step="0.01" class="loss" value="${saved.loss||'10'}" oninput="calcRow(this)"></td>
+                    <td class="grey">0.000</td>
+                    <td><input type="number" step="0.01" class="rate" value="${saved.rate||''}" oninput="calcRow(this)"></td>
                     <td class="amt">0.00</td>
-                    <td style="Width: 70px">${pcs}</td>
+                    <td>${pcs}</td>
                     <td class="totqty">0.000</td>
                     <td class="totamt">0.00</td>
                 `;
@@ -348,8 +140,6 @@ function mergeCells() {
 
 function calcRow(el) {
     const tr = el.closest("tr");
-    const cdia = parseFloat(tr.querySelector(".cdia").value)||0;
-    const dia = parseFloat(tr.querySelector(".dia").value)||0;
     const fin = parseFloat(tr.querySelector(".fin").value)||0;
     const loss = parseFloat(tr.querySelector(".loss").value)||0;
     const rate = parseFloat(tr.querySelector(".rate").value)||0;
@@ -396,8 +186,6 @@ function calcAllModal() {
 function applyCopy() {
     const first = document.querySelector("#consBody tr");
     if(!first) return;
-    const cDia = first.querySelector(".cdia").value;
-    const fDia = first.querySelector(".dia").value;
     const fFin = first.querySelector(".fin").value;
     const fLoss = first.querySelector(".loss").value;
     const fRate = first.querySelector(".rate").value;
@@ -418,7 +206,6 @@ function applyCopy() {
         if(document.getElementById("copyColorSize").checked && sameColor && sameSize) copy = true;
 
         if(copy) {
-            tr.querySelector(".cdia").value = cDia;
             tr.querySelector(".fin").value = fFin;
             tr.querySelector(".loss").value = fLoss;
             tr.querySelector(".rate").value = fRate;
@@ -451,7 +238,6 @@ function saveModal() {
             po: tr.dataset.po,
             color: tr.dataset.color,
             size: tr.dataset.size,
-            cdia: tr.querySelector(".cdia").value,
             fin: tr.querySelector(".fin").value,
             loss: tr.querySelector(".loss").value,
             rate: tr.querySelector(".rate").value
@@ -675,4 +461,3 @@ function recalcVisibleOnly() {
 
 // Start
 addFabricRow();
-</script>
