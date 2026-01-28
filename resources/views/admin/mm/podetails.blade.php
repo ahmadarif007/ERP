@@ -1,5 +1,6 @@
 
 
+<link rel="stylesheet" href="{{asset('backend')}}/css/process-calculator.css">
 <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
@@ -130,7 +131,7 @@
 
       <div class="row">
         {{-- Data table with search======================= --}}
-        <div class="box col-lg-12">
+        <div class="box box-info col-lg-12">
           <div class="box-header">
             <h3 class="box-title">Total Job Details Information</h3>
             </div>
@@ -218,7 +219,7 @@
       </div> --}}
 
         <!-- SELECT2 EXAMPLE -->
-        <div class="box box-default col-12">
+        <div class="box box-info col-12">
           <div class="box-header with-border">
             <h3 class="box-title">PO Details Entry</h3>
             <div class="box-tools pull-right">
@@ -305,9 +306,13 @@
 
         
 
-      <div class="box">
+      <div class="box box-info">
         <div class="box-header">
           <h3 class="box-title">Data Table With Full Features</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+          </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -374,6 +379,30 @@
               <div id="summary" class="summary"></div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="">
+        <div class="box box-info">
+          <div class="box-header">
+            <h3 class="box-title">Excess Cut / Process Loss Calculator</h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+            </div>
+          </div>
+
+          <div id="colors-container" class="colors-container"></div>
+
+          <div style="padding: 10px 20px 10px 20px">
+            <button class="process-add-btn" onclick="addNewColorSection()">+ নতুন কালার যোগ করুন</button>
+          </div>
+
+          <!-- ফাইনাল ব্রেকডাউন -->
+          {{-- <div class="color-section" style="margin-top: 40px;">
+            <h2>Final Process Loss Breakdown</h2>
+            <div id="final-breakdown"></div>
+          </div> --}}
         </div>
       </div>
 
@@ -455,6 +484,9 @@
         </div>
     </section>
     <!-- /.content -->
+
+    
+<script src="{{asset('backend')}}/custom-js/mm/process-calculator.js"></script>
 
 
 

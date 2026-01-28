@@ -1,0 +1,275 @@
+/* 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    background: #f5f7fa;
+    padding: 20px;
+    color: #333;
+  }
+
+  .pro-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  h1, h2 {
+    color: #1a3c5e;
+    margin-bottom: 15px;
+  }
+
+  .pro-color-section {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+
+  .input-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  select, input[type="number"], input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  button {
+    padding: 10px 20px;
+    background: #2c7be5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+
+  button:hover {
+    background: #1a5bb8;
+  }
+
+  .add-btn {
+    background: #28a745;
+  }
+
+  .add-btn:hover {
+    background: #218838;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95rem;
+  }
+
+  .table th, td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .table th {
+    background: #f1f5f9;
+    font-weight: 600;
+  }
+
+  .table .total-row {
+    font-weight: bold;
+    background: #e9f5ff;
+  }
+
+  .table .total-row td:last-child {
+    color: #d32f2f;
+  }
+
+  .table .remove-btn {
+    background: #dc3545;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  .table .remove-btn:hover {
+    background: #c82333;
+  } */
+
+  /* ===================================================== */
+
+  /* .process-input-group select, input[type="number"], input[type="text"] {
+    width: auto;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  .color-section {
+    background: white;
+    border-radius: 8px;
+    padding: 0px 20px 10px 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+  .process-input-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  .process-add-btn{
+    padding: 6px 10px;
+    background: #2c7be5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .remove-btn {
+    background: #dc3545;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    border: none;
+    color: white;
+    border-radius: 3px;
+  }
+
+ .remove-btn:hover {
+    background: #c82333;
+  } 
+  .colors-container{
+    padding: 20px;
+  }
+  .process-table th {
+    /* font-weight: 600; */
+  /* } */
+
+  /* .process-table {
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95rem;
+  }
+
+  .process-table th, td {
+    padding: 5px 5px;
+    /* text-align: left; */
+    /* border-bottom: 1px solid #eee;
+  }
+
+  .process-table .total-row {
+    font-weight: bold;
+    /* background: #e9f5ff; */
+  /* }
+
+  .process-table .total-row td:last-child {
+    color: #d32f2f;
+  } */ */ */ */
+
+  /* ============================================ */
+  .color-section {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+
+  .color-section .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 15px; */
+    /* padding-bottom: 10px; */
+    /* border-bottom: 1px solid #eee; */
+  }
+
+  .process-input-group select, input[type="number"], input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 9px;
+  }
+
+  .process-input-group {
+    background: #f8f9fa;
+    padding: 15px 15px 5px 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+  }
+
+  .process-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* font-size: 0.95rem; */
+  }
+
+  .process-table th,
+  .process-table td {
+    padding: 5px 5px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .process-table th {
+    /* background: #e9ecef; */
+    font-weight: 600;
+  }
+
+  .process-table .total-row {
+    background: #fff3cd;
+    font-weight: bold;
+  }
+
+  .process-table .total-row td:last-child {
+    color: #d32f2f;
+  }
+
+  .remove-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .remove-btn:hover {
+    background: #c82333;
+  }
+
+  .process-add-btn {
+    background: #2c7be5;
+    color: white;
+    border: none;
+    padding: 3px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+    font-size: 10px;
+  }

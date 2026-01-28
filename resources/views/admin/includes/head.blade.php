@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="{{asset('backend')}}/css/breakdown.css">
   <link rel="stylesheet" href="{{asset('backend')}}/css/fabric-budget.css">
   <link rel="stylesheet" href="{{asset('backend')}}/css/trims-budget.css">
+  <link rel="stylesheet" href="{{asset('backend')}}/css/process-calculator.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
